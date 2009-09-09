@@ -231,8 +231,8 @@ module ManageBaseUserControllerModule
       
       csv_infos = {}
       csv_infos[:point] = params[:csv_output_point] unless params[:csv_output_point].blank?
-      start_csv_output({:user_info => @user_info, :profile_info => @profile_info, 
-                        :point_info => @point_info, :base_user_file_history_id => base_user_file_hitory.id })
+      Manage::BaseUserController.start_csv_output({:user_info => @user_info, :profile_info => @profile_info, 
+                                                   :point_info => @point_info, :base_user_file_history_id => base_user_file_hitory.id })
       flash[:notice] = 'CSVファイルの更新を開始しました。'
       
       redirect_to :action => :search
