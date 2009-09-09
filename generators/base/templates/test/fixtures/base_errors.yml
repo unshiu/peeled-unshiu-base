@@ -396,3 +396,10 @@ U-09005:
   message: このコミュニティにトピックの作成権限はありません。
   created_at: <%= Time.now.to_s :db %>
   updated_at: <%= Time.now.to_s :db %>
+U-10001:
+  id: 10001
+  error_code: U-10001
+  message: ポイント広告は付与できません。
+  created_at: <%= Time.now.to_s :db %>
+  updated_at: <%= Time.now.to_s :db %>
+  
