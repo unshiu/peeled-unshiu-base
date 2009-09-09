@@ -100,6 +100,8 @@ module BaseHelperModule
   # 最終ログイン日付からログインステータスを表示する
   # _param1_:: Time value 
   def login_status(value)
+    return "-" if value.nil?
+    
     [1, 3, 5, 30].each do |min|
       return "#{min}分以内" if Time.at(value) > Time.now - min * 60
     end
