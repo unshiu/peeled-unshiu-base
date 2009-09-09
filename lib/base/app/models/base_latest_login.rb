@@ -12,7 +12,7 @@ module BaseLatestLoginModule
           set_timeout AppResources[:init][:tokyotyrant_timeout]
           set_column :app_name,     :string
           set_column :base_user_id, :integer
-          set_column :latest_login, :integer
+          set_column :latest_login, :datetime
         end
         
         const_set('APP_NAME', "unshiu")
@@ -30,9 +30,9 @@ module BaseLatestLoginModule
 
       latest = find_by_base_user_id(base_user_id)
       if latest.nil?
-        latest = create(:app_name => BaseLatestLogin::APP_NAME, :base_user_id => base_user_id, :latest_login => Time.now.to_i)
+        latest = create(:app_name => BaseLatestLogin::APP_NAME, :base_user_id => base_user_id, :latest_login => Time.now)
       else
-        latest.latest_login = Time.now.to_i
+        latest.latest_login = Time.now
         latest.save
       end
       latest
