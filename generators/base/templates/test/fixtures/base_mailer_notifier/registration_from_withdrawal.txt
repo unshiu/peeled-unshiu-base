@@ -1,2 +1,2 @@
 To: registration@test
-From: test6@test
+From: test6@test.com
